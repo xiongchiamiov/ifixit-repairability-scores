@@ -20,3 +20,12 @@ Read the teardowns for yourself and make your own decisions.
 [Tablet Repairability]: http://www.ifixit.com/Tablet_Repairability
 [Miro]: http://www.ifixit.com/user/17
 
+# Hacking
+
+    [$]> git clone git://github.com/xiongchiamiov/ifixit-repairability-scores.git
+    [$]> cd ifixit-repairability-scores
+    [$]> git submodule init
+    [$]> virtualenv --no-site-packages --distribute env
+    [$]> source env/bin/activate
+    [$]> pip install -r requirements.txt
+
