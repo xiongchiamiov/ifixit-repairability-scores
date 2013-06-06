@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>iFixit Repairability Scores</title>
+	<style type="text/css">
+		body {
+			color: #ddd;
+			background-color: #222;
+			font-family: Tahoma, Geneva, "Trebuchet MS", sans-serif;
+			margin-left: 10%;
+			margin-right: 10%;
+			line-height: 1.6;
+		}
+		a {
+			color: #AFB8DE;
+		}
+		a:visited {
+			color: #C7AFDE;
+		}
+		p, #scores {
+			border: 2px dashed #444;
+			padding: 1em;
+		}
+		th.headerSortUp:after {
+         content: "↧";
+      }
+		th.headerSortDown:after {
+         content: "↥";
+      }
+	</style>
+	<script type="text/Javascript" src="3P/jquery.js"></script>
+	<script type="text/Javascript" src="3P/jquery.tablesorter.min.js"></script>
+</head>
+<body>
+	<p>
+      The officially unofficial listing of iFixit's repairability scores for
+      various electronics.
+	</p>
+   <p>
+      A little while ago, we at iFixit released <a
+      href="http://www.ifixit.com/Tablet_Repairability">a fancy little
+      table</a> of the repairability scores for tablets.  People went wild for
+      it, which proves that we've been presenting useful information in a
+      non-useful manner.  That's sorta fixed now, but only for tablets, which
+      isn't terribly great.
+   </p>
+   <p>
+      So, I placed a bet with myself: could I write a script to automatically
+      parse out repairability scores using only our externally-available API
+      before we would manage to ship a similar table using internal tools?  The
+      answer was yes.
+   </p>
+   <p>
+      Please note that <a href="http://www.ifixit.com/user/17">Miro</a> and
+      crew are working hard on a concrete set of guidelines for the
+      repairability scores, at which point our lovely writers will go through
+      old teardowns and adjust them to be all nice and consistent.  This hasn't
+      happened yet, so a 5 in 2011 may be quite different than a 5 in 2013.
+      Read the teardowns for yourself and make your own decisions.
+   </p>
+   <p>
+      <a
+      href="https://github.com/xiongchiamiov/ifixit-repairability-scores">Fork
+      this project on Github.</a>
+   </p>
+	<table id="scores">
+      <thead>
+         <tr>
+            <th>Device</th>
+            <th>Score</th>
+         </tr>
+      </thead>
+	{% for teardown, score in scores %}
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/{{ teardown.category.name |
+            urlencode }}">{{ teardown.category.title }}</a>
+            &mdash;
+            <a href="{{ teardown.url }}">{{ teardown.title }}</a>
+         </td>
+         <td>{{ score }}</td>
+      </tr>
+	{% endfor %}
+	</table>
+   <script type="text/Javascript">
+      $(document).ready(function() {
+         $('#scores').tablesorter({sortList: [[1, 1]]});
+      });
+   </script>
+</body>
+</html>
+

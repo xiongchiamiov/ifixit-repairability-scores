@@ -10,6 +10,7 @@ import re
 import signal
 import sys
 
+from jinja2 import Environment, FileSystemLoader
 from pyfixit.guide import Guide
 
 # Stack traces are ugly; why would we want to print one on ctrl-c?
@@ -21,6 +22,8 @@ signal.signal(signal.SIGINT, nice_sigint)
 # Unicode is a bitch when redirecting stdout.
 # http://stackoverflow.com/a/1169209/120999
 sys.stdout = codecs.getwriter('utf8')(sys.stdout)
+
+scores = []
 
 teardowns = Guide.all(filter='teardown')
 for teardown in teardowns:
@@ -34,6 +37,11 @@ for teardown in teardowns:
          match = re.match(r".*Repairability( Score)?: '''(\d+)", unicode(line.text))
          if match:
             (_, score) = match.groups()
-            print('%s: %d' % (teardown.title, int(score)))
-   sys.stdout.flush()
+            score = int(score)
+            #print('%s: %d' % (teardown.title, score))
+            scores.append((teardown, score))
+   #sys.stdout.flush()
+
+env = Environment(loader=FileSystemLoader('.'))
+print(env.get_template('scores.html').render(scores=scores))
 

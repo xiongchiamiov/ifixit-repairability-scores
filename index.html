@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>iFixit Repairability Scores</title>
+	<style type="text/css">
+		body {
+			color: #ddd;
+			background-color: #222;
+			font-family: Tahoma, Geneva, "Trebuchet MS", sans-serif;
+			margin-left: 10%;
+			margin-right: 10%;
+			line-height: 1.6;
+		}
+		a {
+			color: #AFB8DE;
+		}
+		a:visited {
+			color: #C7AFDE;
+		}
+		p, #scores {
+			border: 2px dashed #444;
+			padding: 1em;
+		}
+		th.headerSortUp:after {
+         content: "↧";
+      }
+		th.headerSortDown:after {
+         content: "↥";
+      }
+	</style>
+	<script type="text/Javascript" src="3P/jquery.js"></script>
+	<script type="text/Javascript" src="3P/jquery.tablesorter.min.js"></script>
+</head>
+<body>
+	<p>
+      The officially unofficial listing of iFixit's repairability scores for
+      various electronics.
+	</p>
+   <p>
+      A little while ago, we at iFixit released <a
+      href="http://www.ifixit.com/Tablet_Repairability">a fancy little
+      table</a> of the repairability scores for tablets.  People went wild for
+      it, which proves that we've been presenting useful information in a
+      non-useful manner.  That's sorta fixed now, but only for tablets, which
+      isn't terribly great.
+   </p>
+   <p>
+      So, I placed a bet with myself: could I write a script to automatically
+      parse out repairability scores using only our externally-available API
+      before we would manage to ship a similar table using internal tools?  The
+      answer was yes.
+   </p>
+   <p>
+      Please note that <a href="http://www.ifixit.com/user/17">Miro</a> and
+      crew are working hard on a concrete set of guidelines for the
+      repairability scores, at which point our lovely writers will go through
+      old teardowns and adjust them to be all nice and consistent.  This hasn't
+      happened yet, so a 5 in 2011 may be quite different than a 5 in 2013.
+      Read the teardowns for yourself and make your own decisions.
+   </p>
+   <p>
+      <a
+      href="https://github.com/xiongchiamiov/ifixit-repairability-scores">Fork
+      this project on Github.</a>
+   </p>
+	<table id="scores">
+      <thead>
+         <tr>
+            <th>Device</th>
+            <th>Score</th>
+         </tr>
+      </thead>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Dell%20Streak">Dell Streak Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Dell+Streak+Teardown/3512/1">Dell Streak Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPod%20Shuffle%204th%20Generation">iPod Shuffle 4th Generation Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPod+Shuffle+4th+Generation+Teardown/3559/1">iPod Shuffle 4th Generation Teardown</a>
+         </td>
+         <td>2</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPod%20Touch%204th%20Generation">iPod Touch 4th Generation Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPod+Touch+4th+Generation+Teardown/3562/1">iPod Touch 4th Generation Teardown</a>
+         </td>
+         <td>4</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPod%20Nano%206th%20Generation">iPod Nano 6th Generation Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPod+Nano+6th+Generation+Teardown/3563/1">iPod Nano 6th Generation Teardown</a>
+         </td>
+         <td>5</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/PlayStation%20Move">PlayStation Move Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/PlayStation+Move+Teardown/3594/1">PlayStation Move Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Apple%20TV%202nd%20Generation">Apple TV 2nd Generation Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Apple+TV+2nd+Generation+Teardown/3625/1">Apple TV 2nd Generation Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Nokia%20N8">Nokia N8 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Nokia+N8+Teardown/3641/1">Nokia N8 Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/MacBook%20Air%2011%22%20Late%202010">MacBook Air 11&quot; Late 2010 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/MacBook+Air+11-Inch+Late+2010+Teardown/3745/1">MacBook Air 11" Late 2010 Teardown</a>
+         </td>
+         <td>4</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Logitech%20Revue">Logitech Revue Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Logitech+Revue+Teardown/3788/1">Logitech Revue Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Parrot%20AR.Drone">Parrot AR.Drone Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Parrot+AR.Drone+Teardown/3984/1">Parrot AR.Drone Teardown</a>
+         </td>
+         <td>9</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Microsoft%20Kinect">Microsoft Kinect Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Microsoft+Kinect+Teardown/4066/1">Microsoft Kinect Teardown</a>
+         </td>
+         <td>6</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Samsung%20Galaxy%20Tab">Samsung Galaxy Tab Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Samsung+Galaxy+Tab+Teardown/4103/1">Samsung Galaxy Tab Teardown</a>
+         </td>
+         <td>6</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Boxee%20Box">Boxee Box Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Boxee+Box+Teardown/4109/1">Boxee Box Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Nexus%20S">Nexus S Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Nexus+S+Teardown/4365/1">Nexus S Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Dell%20Inspiron%20Duo">Dell Inspiron Duo Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Dell+Inspiron+Duo+Teardown/4399/1">Dell Inspiron Duo Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/HTC%20Surround">HTC Surround Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/HTC+Surround+Teardown/4469/1">HTC Surround Teardown</a>
+         </td>
+         <td>5</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPhone%204%20Verizon">iPhone 4 Verizon Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPhone+4+Verizon+Teardown/4693/1">iPhone 4 Verizon Teardown</a>
+         </td>
+         <td>6</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Motorola%20Atrix%204G">Motorola Atrix 4G Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Motorola+Atrix+4G+Teardown/4964/1">Motorola Atrix 4G Teardown</a>
+         </td>
+         <td>9</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Samsung%20Galaxy%20S%204G">Samsung Galaxy S 4G Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Samsung+Galaxy+S+4G+Teardown/4977/1">Samsung Galaxy S 4G Teardown</a>
+         </td>
+         <td>6</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Motorola%20Xoom">Motorola Xoom Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Motorola+Xoom+Teardown/4989/1">Motorola Xoom Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/MacBook%20Pro%2015%22%20Unibody%20Early%202011">MacBook Pro 15&quot; Unibody Early 2011 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/MacBook+Pro+15-Inch+Unibody+Early+2011+Teardown/4990/1">MacBook Pro 15" Unibody Early 2011 Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Nintendo%203DS">Nintendo 3DS Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Nintendo+3DS+Teardown/5029/1">Nintendo 3DS Teardown</a>
+         </td>
+         <td>5</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPad%202%20Wi-Fi%20EMC%202415">iPad 2 Wi-Fi EMC 2415 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPad+2+Wi-Fi+EMC+2415+Teardown/5071/1">iPad 2 Wi-Fi EMC 2415 Teardown</a>
+         </td>
+         <td>2</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPad%202%20Smart%20Cover">iPad 2 Smart Cover Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPad+2+Smart+Cover+Teardown/5089/1">iPad 2 Smart Cover Teardown</a>
+         </td>
+         <td>0</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/BlackBerry%20PlayBook">BlackBerry PlayBook Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/BlackBerry+PlayBook+Teardown/5265/1">BlackBerry PlayBook Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Nikon%20D5100">Nikon D5100 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Nikon+D5100+Teardown/5271/1">Nikon D5100 Teardown</a>
+         </td>
+         <td>2</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iMac%20Intel%2021.5%22%20EMC%202428">iMac Intel 21.5&quot; EMC 2428 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iMac+Intel+21.5-Inch+EMC+2428+Teardown/5485/1">iMac Intel 21.5" EMC 2428 Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Samsung%20Series%205%203G%20Chromebook">Samsung Series 5 3G Chromebook Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Samsung+Series+5+3G+Chromebook+Teardown/5939/1">Samsung Series 5 3G Chromebook Teardown</a>
+         </td>
+         <td>6</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/MacBook%20Air%2013%22%20Mid%202011">MacBook Air 13&quot; Mid 2011 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/MacBook+Air+13-Inch+Mid+2011+Teardown/6130/1">MacBook Air 13" Mid 2011 Teardown</a>
+         </td>
+         <td>4</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Mac%20Mini%20Mid%202011">Mac Mini Mid 2011 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Mac+Mini+Mid+2011+Teardown/6131/1">Mac Mini Mid 2011 Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Motorola%20Droid%20Bionic">Motorola Droid Bionic Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Motorola+Droid+Bionic+Teardown/6449/1">Motorola Droid Bionic Teardown</a>
+         </td>
+         <td>9</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Samsung%20Epic%204G%20Touch">Samsung Epic 4G Touch Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Samsung+Epic+4G+Touch+Teardown/6481/1">Samsung Epic 4G Touch Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Apple%20Thunderbolt%20Display">Apple Thunderbolt Display Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Apple+Thunderbolt+Display+Teardown/6525/1">Apple Thunderbolt Display Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPhone%204S">iPhone 4S Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPhone+4S+Teardown/6610/1">iPhone 4S Teardown</a>
+         </td>
+         <td>6</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Motorola%20Droid%20RAZR">Motorola Droid RAZR Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Motorola+Droid+RAZR+Teardown/7048/1">Motorola Droid RAZR Teardown</a>
+         </td>
+         <td>4</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Kindle%20Fire">Kindle Fire Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Kindle+Fire+Teardown/7099/1">Kindle Fire Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Nook%20Tablet">Nook Tablet Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Nook+Tablet+Teardown/7121/1">Nook Tablet Teardown</a>
+         </td>
+         <td>6</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Samsung%20Galaxy%20Nexus">Samsung Galaxy Nexus Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Samsung+Galaxy+Nexus+Teardown/7182/1">Samsung Galaxy Nexus Teardown</a>
+         </td>
+         <td>6</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPad%203%204G">iPad 3 4G Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPad+3+4G+Teardown/8277/1">iPad 3 4G Teardown</a>
+         </td>
+         <td>2</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Apple%20TV%203rd%20Generation">Apple TV 3rd Generation Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Apple+TV+3rd+Generation+Teardown/8293/1">Apple TV 3rd Generation Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/HP%20Z1">HP Z1 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/HP+Z1+Teardown/8840/1">HP Z1 Teardown</a>
+         </td>
+         <td>10</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Nook%20Simple%20Touch%20with%20GlowLight">Nook Simple Touch with GlowLight Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Nook+Simple+Touch+with+GlowLight+Teardown/9301/1">Nook Simple Touch with GlowLight Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Samsung%20Galaxy%20S%20III">Samsung Galaxy S III Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Samsung+Galaxy+S+III+Teardown/9391/1">Samsung Galaxy S III Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/MacBook%20Air%2013%22%20Mid%202012">MacBook Air 13&quot; Mid 2012 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/MacBook+Air+13-Inch+Mid+2012+Teardown/9457/1">MacBook Air 13" Mid 2012 Teardown</a>
+         </td>
+         <td>4</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/MacBook%20Pro%2015%22%20Retina%20Display%20Mid%202012">MacBook Pro 15&quot; Retina Display Mid 2012 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/MacBook+Pro+15-Inch+Retina+Display+Mid+2012+Teardown/9462/1">MacBook Pro 15" Retina Display Mid 2012 Teardown</a>
+         </td>
+         <td>1</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/MacBook%20Pro%2015%22%20Unibody%20Mid%202012">MacBook Pro 15&quot; Unibody Mid 2012 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/MacBook+Pro+15-Inch+Unibody+Mid+2012+Teardown/9515/1">MacBook Pro 15" Unibody Mid 2012 Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Nexus%207">Nexus 7 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Nexus+7+Teardown/9623/1">Nexus 7 Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Nexus%20Q">Nexus Q Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Nexus+Q+Teardown/9636/1">Nexus Q Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Asus%20Zenbook%20UX32VD">Asus Zenbook UX32VD Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Asus+Zenbook+UX32VD+Teardown/10120/1">Asus Zenbook UX32VD Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Samsung%20Galaxy%20Note%2010.1">Samsung Galaxy Note 10.1 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Samsung+Galaxy+Note+10.1+Teardown/10144/1">Samsung Galaxy Note 10.1 Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Vizio%20Co-Star">Vizio Co-Star Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Vizio+Co-Star+Teardown/10187/1">Vizio Co-Star Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Kindle%20Fire%20HD">Kindle Fire HD Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Kindle+Fire+HD+Teardown/10457/1">Kindle Fire HD Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPhone%205">iPhone 5 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPhone+5+Teardown/10525/1">iPhone 5 Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/PlayStation%203%20Super%20Slim">PlayStation 3 Super Slim Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/PlayStation+3+Super+Slim+Teardown/10670/1">PlayStation 3 Super Slim Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Nikon%20D600">Nikon D600 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Nikon+D600+Teardown/10708/1">Nikon D600 Teardown</a>
+         </td>
+         <td>2</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPod%20Touch%205th%20Generation">iPod Touch 5th Generation Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPod+Touch+5th+Generation+Teardown/10803/1">iPod Touch 5th Generation Teardown</a>
+         </td>
+         <td>3</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPod%20Nano%207th%20Generation">iPod Nano 7th Generation Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPod+Nano+7th+Generation+Teardown/10826/1">iPod Nano 7th Generation Teardown</a>
+         </td>
+         <td>5</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Mac%20Mini%20Late%202012">Mac Mini Late 2012 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Mac+Mini+Late+2012+Teardown/11262/1">Mac Mini Late 2012 Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Microsoft%20Surface">Microsoft Surface Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Microsoft+Surface+Teardown/11275/1">Microsoft Surface Teardown</a>
+         </td>
+         <td>4</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPad%20Mini%20Wi-Fi">iPad Mini Wi-Fi Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPad+Mini+Wi-Fi+Teardown/11423/1">iPad Mini Wi-Fi Teardown</a>
+         </td>
+         <td>2</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPad%204%20Wi-Fi">iPad 4 Wi-Fi Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPad+4+Wi-Fi+Teardown/11462/1">iPad 4 Wi-Fi Teardown</a>
+         </td>
+         <td>2</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Nexus%204">Nexus 4 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Nexus+4+Teardown/11781/1">Nexus 4 Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Nintendo%20Wii%20U">Nintendo Wii U Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Nintendo+Wii+U+Teardown/11796/1">Nintendo Wii U Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iMac%20Intel%2021.5%22%20EMC%202544">iMac Intel 21.5&quot; EMC 2544 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iMac+Intel+21.5-Inch+EMC+2544+Teardown/11936/1">iMac Intel 21.5" EMC 2544 Teardown</a>
+         </td>
+         <td>3</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/GoPro%20Hero3">GoPro Hero3 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/GoPro+Hero3+Teardown/12457/1">GoPro Hero3 Teardown</a>
+         </td>
+         <td>7</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Sonos%20Play%203">Sonos Play 3 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Sonos+Play%3A3+Teardown/12475/1">Sonos Play:3 Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Microsoft%20Surface%20Pro">Microsoft Surface Pro Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Microsoft+Surface+Pro+Teardown/12842/1">Microsoft Surface Pro Teardown</a>
+         </td>
+         <td>1</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/BlackBerry%20Z10">BlackBerry Z10 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/BlackBerry+Z10+Teardown/13445/1">BlackBerry Z10 Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Oculus%20Rift">Oculus Rift Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Oculus+Rift+Teardown/13682/1">Oculus Rift Teardown</a>
+         </td>
+         <td>9</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Nest%20Learning%20Thermostat%202nd%20Generation">Nest Learning Thermostat 2nd Generation Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Nest+Learning+Thermostat+2nd+Generation+Teardown/13818/1">Nest Learning Thermostat 2nd Generation Teardown</a>
+         </td>
+         <td>9</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Samsung%20Galaxy%20S4">Samsung Galaxy S4 Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Samsung+Galaxy+S4+Teardown/13947/1">Samsung Galaxy S4 Teardown</a>
+         </td>
+         <td>8</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/Ouya">Ouya Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/Ouya+Teardown/14224/1">Ouya Teardown</a>
+         </td>
+         <td>9</td>
+      </tr>
+	
+      <tr>
+         <td>
+            <a href="http://www.ifixit.com/c/iPod%20Touch%205th%20Generation%2016%20GB">iPod Touch 5th Generation 16 GB Repair</a>
+            &mdash;
+            <a href="http://www.ifixit.com/Teardown/iPod+Touch+5th+Generation+16+GB+Teardown/14855/1">iPod Touch 5th Generation 16 GB Teardown</a>
+         </td>
+         <td>3</td>
+      </tr>
+	
+	</table>
+   <script type="text/Javascript">
+      $(document).ready(function() {
+         $('#scores').tablesorter({sortList: [[1, 1]]});
+      });
+   </script>
+</body>
+</html>
+
