@@ -1,11 +1,11 @@
 The officially unofficial listing of iFixit's repairability scores for various
 electronics.
 
-A little while ago, we at iFixit released [a fancy little table][Tablet
-Repairability] of the repairability scores for tablets.  People went wild for
-it, which proves that we've been presenting useful information in a non-useful
-manner.  That's sorta fixed now, but only for tablets, which isn't terribly
-great.
+A little while ago, we at iFixit released
+[a fancy little table][Tablet Repairability] of the repairability scores for
+tablets.  People went wild for it, which proves that we've been presenting
+useful information in a non-useful manner.  That's sorta fixed now, but only
+for tablets, which isn't terribly great.
 
 So, I placed a bet with myself: could I write a script to automatically parse
 out repairability scores using only our externally-available API before we
