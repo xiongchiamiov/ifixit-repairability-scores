@@ -71,18 +71,20 @@
 	<table id="scores">
       <thead>
          <tr>
+            <th>Publish Date</th>
             <th>Device</th>
             <th>Score</th>
          </tr>
       </thead>
 	{% for teardown, score in scores %}
       <tr>
+         <td><span>{{ teardown.publishedDate.date().isoformat() }}</td>
          <td>
             <img src="{{ teardown.category.image.thumbnail }}" />
             <a href="http://www.ifixit.com/c/{{ teardown.category.name |
             urlencode }}"><span>{{ teardown.category.title }}</span></a>
             &mdash;
-            <a href="{{ teardown.url }}">{{ teardown.title }}</a>
+            <a href="{{ teardown.url }}">teardown</a>
          </td>
          <td><span>{{ score }}</span></td>
       </tr>
@@ -91,7 +93,7 @@
    <script type="text/Javascript">
       $(document).ready(function() {
          $('#scores').tablesorter({
-            sortList: [[1, 1]],
+            sortList: [[0, 1]],
             textExtraction: function(node) {
                return $(node).find('span').text();
             },
