@@ -2,45 +2,45 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>iFixit Repairability Scores</title>
-	<style type="text/css">
-		body {
-			color: #ddd;
-			background-color: #222;
-			font-family: Tahoma, Geneva, "Trebuchet MS", sans-serif;
-			margin-left: 10%;
-			margin-right: 10%;
-			line-height: 1.6;
-		}
-		a {
-			color: #AFB8DE;
-		}
-		a:visited {
-			color: #C7AFDE;
-		}
-		p, #scores {
-			border: 2px dashed #444;
-			padding: 1em;
-		}
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <title>iFixit Repairability Scores</title>
+   <style type="text/css">
+      body {
+         color: #ddd;
+         background-color: #222;
+         font-family: Tahoma, Geneva, "Trebuchet MS", sans-serif;
+         margin-left: 10%;
+         margin-right: 10%;
+         line-height: 1.6;
+      }
+      a {
+         color: #AFB8DE;
+      }
+      a:visited {
+         color: #C7AFDE;
+      }
+      p, #scores {
+         border: 2px dashed #444;
+         padding: 1em;
+      }
       #scores {
          width: 100%;
       }
-		th.headerSortUp:after {
+      th.headerSortUp:after {
          content: "↧";
       }
-		th.headerSortDown:after {
+      th.headerSortDown:after {
          content: "↥";
       }
-	</style>
-	<script type="text/Javascript" src="3P/jquery.js"></script>
-	<script type="text/Javascript" src="3P/jquery.tablesorter.min.js"></script>
+   </style>
+   <script type="text/Javascript" src="3P/jquery.js"></script>
+   <script type="text/Javascript" src="3P/jquery.tablesorter.min.js"></script>
 </head>
 <body>
-	<p>
+   <p>
       The officially unofficial listing of iFixit's repairability scores for
       various electronics.
-	</p>
+   </p>
    <p>
       A little while ago, we at iFixit released <a
       href="http://www.ifixit.com/Tablet_Repairability">a fancy little
@@ -68,7 +68,7 @@
       href="https://github.com/xiongchiamiov/ifixit-repairability-scores">Fork
       this project on Github.</a>
    </p>
-	<table id="scores">
+   <table id="scores">
       <thead>
          <tr>
             <th>Publish Date</th>
@@ -76,7 +76,7 @@
             <th>Score</th>
          </tr>
       </thead>
-	{% for teardown, score in scores %}
+   {% for teardown, score in scores %}
       <tr>
          <td><span>{{ teardown.publishedDate.date().isoformat() }}</td>
          <td>
@@ -88,8 +88,8 @@
          </td>
          <td><span>{{ score }}</span></td>
       </tr>
-	{% endfor %}
-	</table>
+   {% endfor %}
+   </table>
    <script type="text/Javascript">
       $(document).ready(function() {
          $('#scores').tablesorter({
